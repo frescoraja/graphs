@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Visualized Graph Algorithms</title>
+		<link href="styles/styles.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="d3/d3.js"></script>
+	</head>
+	<body>
+		<p id="maze" class="animation"></p>
+		<script type="text/javascript">
+		var w = 600,
+				h = 480,
+				cellSize = 5,
+				cellSpacing = 5,
+				cellWidth = (w - cellSpacing) / (cellSpacing + cellSize),
+				cellHeight = (h - cellSpacing) / (cellSpacing + cellSize),
+				cells,
+				horizon,
+				seen = 0;
+
+		var p = d3.select("#maze")
+
+		var canvas = p.append("canvas")
+									.attr("width", w)
+									.attr("height", h);
+
+		var button = p.append("button")
+									.text("Play!")
+									.on("click", click);
+
+		var ctx = canvas.getContext("2d");
+		
+		function click () {
+			ctx.clearRect(0, 0, w, h);
+			ctx.fillStyle = "white";
+
+			var id = ++active;
+
+
+		}
+		</script>
+	</body>
+</html>
